@@ -3,7 +3,14 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -26,6 +33,9 @@
     "react/no-children-prop": "off",
     "react/jsx-fragments": "off",
     "react/no-array-index-key": "off",
+    "no-shadow": "off",
+    "no-param-reassign": "off",
+    "react/require-default-props": "off",
     "import/extensions": [
       "error",
       "never",
@@ -34,6 +44,20 @@
         "jsx": "never",
         "ts": "never",
         "tsx": "never"
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": [
+          "index",
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling"],
+          "object"
+        ]
       }
     ]
   },

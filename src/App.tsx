@@ -1,11 +1,14 @@
-import React from "react";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { Routes } from "routes";
+import { checkAuthStatus } from "store/slices/auth-slice";
 
 function App() {
-  return (
-    <div className="App">
-      <p>Simple Admin Application</p>
-    </div>
-  );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(checkAuthStatus());
+  }, []);
+  return <Routes />;
 }
 
 export default App;

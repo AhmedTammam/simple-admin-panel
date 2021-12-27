@@ -6,6 +6,7 @@
     "@chakra-ui/react": "^1.7.3",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "@reduxjs/toolkit": "^1.7.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -17,14 +18,19 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.22.5",
-    "react-router-dom": "^6.2.1",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "5.3.0",
     "react-scripts": "5.0.0",
     "typescript": "^4.4.2",
+    "uuid": "^8.3.2",
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.6.0",
-    "eslint": "8.4.1",
+    "@types/react-router-dom": "^5.3.2",
+    "@types/uuid": "^8.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "eslint": "^8.5.0",
     "eslint-config-airbnb": "^19.0.2",
     "eslint-config-next": "12.0.7",
     "eslint-config-prettier": "^8.3.0",
@@ -35,12 +41,26 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src",
+    "lint:fix": "yarn lint -- --fix"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   }
 }
