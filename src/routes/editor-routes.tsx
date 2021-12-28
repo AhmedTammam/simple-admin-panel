@@ -1,10 +1,11 @@
-import { ProductsPage } from "domain/editor/pages/product-page";
+import { ProductsPage } from "domain/editor/pages/product";
 
 import { Redirect, Switch, Link as ReachLink } from "react-router-dom";
 import { Link } from "@chakra-ui/react";
 import { Header } from "components/header";
+import { MainLayout } from "components/layout/main-layout";
 
-import { PrivateRoute } from "./private-route";
+import { PrivateRoute } from "./components/private-route";
 
 export function EditorRoutes() {
   return (
@@ -16,10 +17,12 @@ export function EditorRoutes() {
           </Link>
         )}
       />
-      <Switch>
-        <Redirect exact from="/" to="/products" />
-        <PrivateRoute path="/products" component={ProductsPage} />
-      </Switch>
+      <MainLayout>
+        <Switch>
+          <Redirect exact from="/" to="/products" />
+          <PrivateRoute path="/products" component={ProductsPage} />
+        </Switch>
+      </MainLayout>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import { Grid } from "@chakra-ui/react";
-import { ProductItem } from "components/product/product-item/product-item";
-import { AddProduct } from "components/product/product-item/add-product";
+import { ProductItem } from "components/product/product-item";
+import { AddProduct } from "components/product/product-item/components/add-product";
 import { useSelector } from "react-redux";
 import { selectProducts } from "store/slices/product-slice";
 

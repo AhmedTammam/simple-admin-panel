@@ -15,8 +15,8 @@ const Header = ({ renderLinks }: { renderLinks: () => void }) => {
       <Box>
         {renderLinks && renderLinks()}
         <Button
-          variant="solid"
-          bg="red"
+          size="sm"
+          colorScheme="red"
           onClick={() => {
             dispatch(logout());
             history.push("/");

@@ -1,8 +1,9 @@
 import { Badge, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
-import { ProductProps, removeProduct } from "store/slices/product-slice";
+import { removeProduct } from "store/slices/product-slice";
+import { ProductProps } from "types/product";
 
-import { EditeProduct } from "./edit-product";
+import { EditeProduct } from "./components/edit-product";
 
 const ProductItem = ({ product }: { product: ProductProps }) => {
   const { id, englishName, weight, category, thumbnail } = product;

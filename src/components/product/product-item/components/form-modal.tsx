@@ -20,11 +20,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCategories } from "store/slices/category-slice";
-import {
-  addProduct,
-  ProductProps,
-  updateProduct,
-} from "store/slices/product-slice";
+import { addProduct, updateProduct } from "store/slices/product-slice";
+import { ProductProps } from "types/product";
 import { v4 as uuidv4 } from "uuid";
 
 type FormData = {
@@ -144,16 +141,18 @@ const FormModal = ({ isOpen, onClose, product }: ModalProps) => {
             </FormControl>
             <FormControl isInvalid={!!errors.weight} my="4">
               <FormLabel>Weight</FormLabel>
-              <NumberInput>
-                <NumberInputField
-                  placeholder="Weight"
-                  bg="white"
-                  {...register("weight", {
-                    required: "This is required",
-                  })}
-                  defaultValue={product?.weight}
-                />
-              </NumberInput>
+              <Input
+                placeholder="Weight"
+                bg="white"
+                {...register("weight", {
+                  required: "This is required",
+                  pattern: {
+                    value: /^[1-9]*$/,
+                    message: "Please enter valid weight",
+                  },
+                })}
+                defaultValue={product?.weight}
+              />
               <FormErrorMessage>
                 {errors.weight && errors.weight.message}
               </FormErrorMessage>
@@ -176,10 +175,10 @@ const FormModal = ({ isOpen, onClose, product }: ModalProps) => {
         </ModalBody>
 
         <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={onClose}>
+          <Button variant="ghost" mr={3} onClick={onClose}>
             Close
           </Button>
-          <Button variant="ghost" onClick={handleSubmit(onSubmit)}>
+          <Button colorScheme="blue" onClick={handleSubmit(onSubmit)}>
             {product ? "Edit" : "Add Product"}
           </Button>
         </ModalFooter>

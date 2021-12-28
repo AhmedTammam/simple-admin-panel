@@ -1,5 +1,5 @@
 import { Button, useDisclosure } from "@chakra-ui/react";
-import { CategoryProps } from "store/slices/category-slice";
+import { CategoryProps } from "types/category";
 
 import { FormModal } from "../add-category/form-modal";
 

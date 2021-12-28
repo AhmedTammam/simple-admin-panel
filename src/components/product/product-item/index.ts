@@ -1,1 +1,1 @@
-export const x = "";
+export { ProductItem } from "./product-item";

@@ -16,11 +16,8 @@ import {
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import {
-  addCategory,
-  CategoryProps,
-  updateCategory,
-} from "store/slices/category-slice";
+import { addCategory, updateCategory } from "store/slices/category-slice";
+import { CategoryProps } from "types/category";
 import { v4 as uuidv4 } from "uuid";
 
 type FormData = {
@@ -117,11 +114,11 @@ const FormModal = ({ isOpen, onClose, category }: ModalProps) => {
         </ModalBody>
 
         <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={onClose}>
+          <Button variant="ghost" mr={3} onClick={onClose}>
             Close
           </Button>
-          <Button variant="ghost" onClick={handleSubmit(onSubmit)}>
-            {category ? "Edit" : "Add Product"}
+          <Button colorScheme="blue" onClick={handleSubmit(onSubmit)}>
+            {category ? "Edit" : "Add Category"}
           </Button>
         </ModalFooter>
       </ModalContent>

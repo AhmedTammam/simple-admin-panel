@@ -1,7 +1,8 @@
 import { Button, Td, Tr } from "@chakra-ui/react";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { CategoryProps, removeCategory } from "store/slices/category-slice";
+import { removeCategory } from "store/slices/category-slice";
+import { CategoryProps } from "types/category";
 
 import { EditeCategory } from "../edit-category";
 

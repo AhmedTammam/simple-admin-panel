@@ -11,8 +11,8 @@ import {
 import { useSelector } from "react-redux";
 import { selectCategories } from "store/slices/category-slice";
 
-import { AddCategory } from "./add-category";
-import { CategoryItem } from "./category-item";
+import { AddCategory } from "./component/add-category";
+import { CategoryItem } from "./component/category-item";
 
 const CategoryPage = () => {
   const categories = useSelector(selectCategories);
@@ -20,7 +20,7 @@ const CategoryPage = () => {
     <>
       <AddCategory />
       {categories.length ? (
-        <Box border="1px solid" borderColor="gray.200">
+        <Box border="1px solid" borderColor="gray.200" mx="8">
           <Table variant="simple">
             <Thead>
               <Tr>

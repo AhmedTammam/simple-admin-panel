@@ -1,11 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "store/store";
-
-export type CategoryProps = {
-  id: string;
-  englishName: string;
-  arabicName: string;
-};
+import { CategoryProps } from "types/category";
 
 const initialState: CategoryProps[] =
   JSON.parse(localStorage.getItem("categories") || "[]") || [];

@@ -1,5 +1,5 @@
 import { Button, useDisclosure } from "@chakra-ui/react";
-import { ProductProps } from "store/slices/product-slice";
+import { ProductProps } from "types/product";
 
 import { FormModal } from "./form-modal";
 

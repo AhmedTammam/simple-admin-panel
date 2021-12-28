@@ -2,17 +2,17 @@ import { LoginPage } from "domain/guest/pages/login";
 
 import { FullScreenLoading } from "components/shared/FullScreenLoading";
 import { useSelector } from "react-redux";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import {
   Roles,
   selectIsAuthLoading,
   selectUserRole,
 } from "store/slices/auth-slice";
 
-import { CatchAll404 } from "./404";
-import { EditorRoutes } from "./EditorRoutes";
-import { GuestRoute } from "./guest-route";
-import { ManagerRoutes } from "./ManagerRoutes";
+import { EditorRoutes } from "./editor-routes";
+import { GuestRoute } from "./components/guest-route";
+import { ManagerRoutes } from "./manager-routes";
+import { NotFoundPage } from "./not-found-page";
 
 function Content() {
   const isAuthLoading = useSelector(selectIsAuthLoading);
@@ -32,8 +32,8 @@ function Content() {
 
     default:
       return (
-        <Route>
-          <CatchAll404 />
+        <Route path="not-found">
+          <NotFoundPage />
         </Route>
       );
   }
@@ -43,6 +43,7 @@ function Routes() {
   return (
     <Router>
       <Content />
+      <Redirect to="not-found" />
     </Router>
   );
 }
