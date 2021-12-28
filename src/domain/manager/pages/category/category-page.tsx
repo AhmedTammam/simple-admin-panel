@@ -1,16 +1,17 @@
 import { Box, Table, Tbody, Th, Thead, Tr } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 import { selectCategories } from "store/slices/category-slice";
+import { Category } from "types/category";
 
 import { AddCategory } from "./component/add-category";
 import { CategoryItem } from "./component/category-item";
 
 const CategoryPage = () => {
-  const categories = useSelector(selectCategories);
+  const categories: Category[] = useSelector(selectCategories);
   return (
     <>
       <AddCategory />
-      {categories.length ? (
+      {categories?.length ? (
         <Box border="1px solid" borderColor="gray.200" mx="8">
           <Table variant="simple">
             <Thead>

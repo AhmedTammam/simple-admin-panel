@@ -2,7 +2,7 @@ import { LoginPage } from "domain/guest/pages/login";
 
 import { FullScreenLoading } from "components/shared/full-screen-loading";
 import { useSelector } from "react-redux";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import {
   Roles,
   selectIsAuthLoading,
@@ -14,7 +14,7 @@ import { GuestRoute } from "./components/guest-route";
 import { ManagerRoutes } from "./manager-routes";
 import { NotFoundPage } from "./not-found-page";
 
-function Content() {
+export function Routes() {
   const isAuthLoading = useSelector(selectIsAuthLoading);
   const role = useSelector(selectUserRole);
 
@@ -38,14 +38,3 @@ function Content() {
       );
   }
 }
-
-function Routes() {
-  return (
-    <Router>
-      <Content />
-      {/* <Redirect to="not-found" /> */}
-    </Router>
-  );
-}
-
-export { Routes };

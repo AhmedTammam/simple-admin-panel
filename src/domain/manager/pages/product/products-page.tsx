@@ -3,9 +3,10 @@ import { ProductItem } from "components/shared/product-item";
 import { AddProduct } from "components/shared/product-item/components/add-product";
 import { useSelector } from "react-redux";
 import { selectProducts } from "store/slices/product-slice";
+import { Product } from "types/product";
 
 const ProductsPage = () => {
-  const products = useSelector(selectProducts);
+  const products: Product[] = useSelector(selectProducts);
   return (
     <>
       <AddProduct />
@@ -14,7 +15,7 @@ const ProductsPage = () => {
         gap={6}
         p="8"
       >
-        {products.length
+        {products?.length
           ? products.map((product) => (
               <ProductItem product={product} key={product.id} />
             ))

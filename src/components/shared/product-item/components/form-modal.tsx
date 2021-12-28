@@ -19,6 +19,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCategories } from "store/slices/category-slice";
 import { addProduct, updateProduct } from "store/slices/product-slice";
+import { Category } from "types/category";
 import { Product } from "types/product";
 import { v4 as uuidv4 } from "uuid";
 
@@ -43,7 +44,7 @@ const FormModal = ({ isOpen, onClose, product }: ModalProps) => {
     formState: { errors },
     reset,
   } = useForm<FormData>();
-  const categories = useSelector(selectCategories);
+  const categories: Category[] = useSelector(selectCategories);
   const dispatch = useDispatch();
   const toast = useToast();
 
@@ -125,7 +126,7 @@ const FormModal = ({ isOpen, onClose, product }: ModalProps) => {
                 })}
                 defaultValue={product?.category}
               >
-                {categories.length
+                {categories?.length
                   ? categories.map((category) => (
                       <option value={category.englishName} key={category.id}>
                         {category.englishName}

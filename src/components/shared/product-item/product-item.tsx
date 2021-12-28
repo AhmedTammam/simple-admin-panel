@@ -15,6 +15,7 @@ const ProductItem = ({ product }: { product: Product }) => {
       borderRadius="4"
       borderColor="gray.200"
       p="4"
+      data-testid={`product-item-${id}`}
     >
       <Image src={thumbnail} alt={englishName} />
       <Text my="2">{englishName}</Text>
@@ -26,7 +27,11 @@ const ProductItem = ({ product }: { product: Product }) => {
       </Flex>
       <Flex mt="2" justifyContent="space-between">
         <EditeProduct product={product} />
-        <Button colorScheme="red" onClick={() => dispatch(removeProduct(id))}>
+        <Button
+          colorScheme="red"
+          onClick={() => dispatch(removeProduct(id))}
+          data-testid="delete-btn"
+        >
           Delete
         </Button>
       </Flex>
