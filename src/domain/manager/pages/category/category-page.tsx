@@ -1,11 +1,4 @@
-import {
-  Box,
-  Table,
-  Tbody,
-  Th,
-  Thead,
-  Tr,
-} from "@chakra-ui/react";
+import { Box, Table, Tbody, Th, Thead, Tr } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 import { selectCategories } from "store/slices/category-slice";
 
