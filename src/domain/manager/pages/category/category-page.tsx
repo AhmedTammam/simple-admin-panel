@@ -1,9 +1,7 @@
 import {
   Box,
   Table,
-  TableCaption,
   Tbody,
-  Td,
   Th,
   Thead,
   Tr,

@@ -11,8 +11,6 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  NumberInput,
-  NumberInputField,
   Select,
   useToast,
 } from "@chakra-ui/react";

@@ -19,7 +19,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "unused-imports"],
   "rules": {
     "react/jsx-filename-extension": [
       1,
@@ -36,6 +36,8 @@
     "no-shadow": "off",
     "no-param-reassign": "off",
     "react/require-default-props": "off",
+    "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
     "import/extensions": [
       "error",
       "never",
