@@ -1,1 +1,1 @@
-export { ProductsPage } from "./productsPage";
+export { ProductsPage } from "./products-page";

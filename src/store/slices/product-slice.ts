@@ -1,21 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "store/store";
-import { ProductProps } from "types/product";
+import { Product } from "types/product";
 
-const initialState: ProductProps[] = [];
+const initialState: { product: Product[] } = {
+  product: [],
+};
 
 export const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
     addProduct: (state, action) => {
-      state.push(action.payload);
+      state.product.push(action.payload);
     },
     removeProduct: (state, action) => {
-      state = state.filter((product) => product.id !== action.payload);
+      state.product = state.product.filter(
+        (product) => product.id !== action.payload
+      );
     },
     updateProduct: (state, action) => {
-      state = state.map((product) =>
+      state.product = state.product.map((product) =>
         product.id === action.payload.id
           ? { ...product, ...action.payload }
           : product
@@ -27,6 +31,6 @@ export const productSlice = createSlice({
 export const { addProduct, removeProduct, updateProduct } =
   productSlice.actions;
 
-export const selectProducts = (state: RootState) => state.products;
+export const selectProducts = (state: RootState) => state.products.product;
 
 export default productSlice.reducer;

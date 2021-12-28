@@ -1,21 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "store/store";
-import { CategoryProps } from "types/category";
+import { Category } from "types/category";
 
-const initialState: CategoryProps[] = [];
+const initialState: { category: Category[] } = {
+  category: [],
+};
 
 export const categorySlice = createSlice({
   name: "category",
   initialState,
   reducers: {
     addCategory: (state, action) => {
-      state.push(action.payload);
+      state.category.push(action.payload);
     },
     removeCategory: (state, action) => {
-      state = state.filter((category) => category.id !== action.payload);
+      state.category = state.category.filter(
+        (category) => category.id !== action.payload
+      );
     },
     updateCategory: (state, action) => {
-      state = state.map((category) =>
+      state.category = state.category.map((category) =>
         category.id === action.payload.id
           ? { ...category, ...action.payload }
           : category
@@ -27,6 +31,6 @@ export const categorySlice = createSlice({
 export const { addCategory, removeCategory, updateCategory } =
   categorySlice.actions;
 
-export const selectCategories = (state: RootState) => state.categories;
+export const selectCategories = (state: RootState) => state.categories.category;
 
 export default categorySlice.reducer;

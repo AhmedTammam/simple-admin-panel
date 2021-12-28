@@ -1,9 +1,9 @@
 import { Button, useDisclosure } from "@chakra-ui/react";
-import { CategoryProps } from "types/category";
+import { Category } from "types/category";
 
 import { FormModal } from "../add-category/form-modal";
 
-const EditeCategory = ({ category }: { category: CategoryProps }) => {
+const EditeCategory = ({ category }: { category: Category }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>

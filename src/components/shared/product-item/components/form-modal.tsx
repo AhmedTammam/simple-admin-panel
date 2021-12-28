@@ -21,7 +21,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCategories } from "store/slices/category-slice";
 import { addProduct, updateProduct } from "store/slices/product-slice";
-import { ProductProps } from "types/product";
+import { Product } from "types/product";
 import { v4 as uuidv4 } from "uuid";
 
 type FormData = {
@@ -35,7 +35,7 @@ type FormData = {
 type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  product?: ProductProps;
+  product?: Product;
 };
 
 const FormModal = ({ isOpen, onClose, product }: ModalProps) => {

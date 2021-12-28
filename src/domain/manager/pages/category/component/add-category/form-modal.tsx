@@ -17,7 +17,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { addCategory, updateCategory } from "store/slices/category-slice";
-import { CategoryProps } from "types/category";
+import { Category } from "types/category";
 import { v4 as uuidv4 } from "uuid";
 
 type FormData = {
@@ -28,7 +28,7 @@ type FormData = {
 type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  category?: CategoryProps;
+  category?: Category;
 };
 
 const FormModal = ({ isOpen, onClose, category }: ModalProps) => {

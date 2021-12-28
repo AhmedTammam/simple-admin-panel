@@ -1,6 +1,6 @@
 import { LoginPage } from "domain/guest/pages/login";
 
-import { FullScreenLoading } from "components/shared/FullScreenLoading";
+import { FullScreenLoading } from "components/shared/full-screen-loading";
 import { useSelector } from "react-redux";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import {

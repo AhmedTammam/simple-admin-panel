@@ -1,9 +1,9 @@
 import { Button, useDisclosure } from "@chakra-ui/react";
-import { ProductProps } from "types/product";
+import { Product } from "types/product";
 
 import { FormModal } from "./form-modal";
 
-const EditeProduct = ({ product }: { product: ProductProps }) => {
+const EditeProduct = ({ product }: { product: Product }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>

@@ -1,11 +1,11 @@
 import { Badge, Button, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { removeProduct } from "store/slices/product-slice";
-import { ProductProps } from "types/product";
+import { Product } from "types/product";
 
 import { EditeProduct } from "./components/edit-product";
 
-const ProductItem = ({ product }: { product: ProductProps }) => {
+const ProductItem = ({ product }: { product: Product }) => {
   const { id, englishName, weight, category, thumbnail } = product;
   const dispatch = useDispatch();
   return (

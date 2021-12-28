@@ -2,11 +2,11 @@ import { Button, Td, Tr } from "@chakra-ui/react";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { removeCategory } from "store/slices/category-slice";
-import { CategoryProps } from "types/category";
+import { Category } from "types/category";
 
 import { EditeCategory } from "../edit-category";
 
-const CategoryItem = ({ category }: { category: CategoryProps }) => {
+const CategoryItem = ({ category }: { category: Category }) => {
   const { id, englishName, arabicName } = category;
   const dispatch = useDispatch();
   return (
