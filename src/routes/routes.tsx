@@ -2,7 +2,7 @@ import { LoginPage } from "domain/guest/pages/login";
 
 import { FullScreenLoading } from "components/shared/FullScreenLoading";
 import { useSelector } from "react-redux";
-import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import {
   Roles,
   selectIsAuthLoading,
@@ -32,7 +32,7 @@ function Content() {
 
     default:
       return (
-        <Route path="not-found">
+        <Route>
           <NotFoundPage />
         </Route>
       );
@@ -43,7 +43,7 @@ function Routes() {
   return (
     <Router>
       <Content />
-      <Redirect to="not-found" />
+      {/* <Redirect to="not-found" /> */}
     </Router>
   );
 }
